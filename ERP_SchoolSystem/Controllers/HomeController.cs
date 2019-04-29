@@ -10,6 +10,7 @@ namespace ERP_SchoolSystem.Controllers
     {
         public ActionResult Index()
         {
+            // Application Comments added by Sameer
             return View();
         }
 
