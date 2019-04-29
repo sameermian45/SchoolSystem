@@ -16,7 +16,7 @@ namespace ERP_SchoolSystem.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page";
+            ViewBag.Message = "Your application some changes  page";
 
             return View();
         }
