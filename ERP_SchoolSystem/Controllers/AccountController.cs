@@ -20,6 +20,9 @@ namespace ERP_SchoolSystem.Controllers
 
         public AccountController()
         {      //Zahid Mahmood
+               // sameer ahmed
+
+           //  sdafsdfs
         }
 
         public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager )
