@@ -28,8 +28,7 @@ namespace ERP_SchoolSystem
                         "~/Content/JS/plugins/pickers/pickadate/picker.date.js",
                         "~/Content/JS/plugins/pickers/pickadate/picker.time.js",
                         "~/Content/JS/plugins/pickers/pickadate/legacy.js",
-                        "~/Content/JS/plugins/notifications/jgrowl.min.js",
-                        
+                        "~/Content/JS/plugins/notifications/jgrowl.min.js",                       
                         "~/Content/JS/demo_pages/form_layouts.js",
                         
                         "~/Content/JS/plugins/forms/styling/switch.min.js",
