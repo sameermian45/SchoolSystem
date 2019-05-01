@@ -9,10 +9,9 @@ namespace ERP_SchoolSystem
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/Content/JS").Include(
-                        "~/Content/Loader/jquery-1.7.1.js",
                         "~/Content/Loader/toastr.min.js",
                         "~/Content/Loader/loader.js",
-                        "~/Content/Loader/jquery.maskedinput.js",
+                        
                         "~/Content/JS/main/jquery.min.js",
                         "~/Content/JS/main/bootstrap.bundle.min.js",
                         "~/Content/JS/plugins/loaders/blockui.min.js",
