@@ -8,24 +8,74 @@ namespace ERP_SchoolSystem
         // For more information on bundling, visit http://go.microsoft.com/fwlink/?LinkId=301862
         public static void RegisterBundles(BundleCollection bundles)
         {
-            bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                        "~/Scripts/jquery-{version}.js"));
+            bundles.Add(new ScriptBundle("~/Content/JS").Include(
+                        "~/Content/JS/main/jquery.min.js",
+                        "~/Content/JS/main/bootstrap.bundle.min.js",
+                        "~/Content/JS/plugins/loaders/blockui.min.js",
+                        "~/Content/JS/plugins/ui/ripple.min.js",
+                        "~/Content/JS/plugins/visualization/d3/d3.min.js",
+                        "~/Content/JS/plugins/visualization/d3/d3_tooltip.js",
+                        "~/Content/JS/plugins/forms/styling/switchery.min.js",
+                        "~/Content/JS/plugins/forms/selects/bootstrap_multiselect.js",
+                        "~/Content/JS/plugins/ui/moment/moment.min.js",
+                        "~/Content/JS/plugins/pickers/daterangepicker.js",
+                        "~/Content/JS/plugins/pickers/anytime.min.js",
+                        "~/Content/JS/plugins/pickers/pickadate/picker.js",
+                        "~/Content/JS/plugins/pickers/pickadate/picker.date.js",
+                        "~/Content/JS/plugins/pickers/pickadate/picker.time.js",
+                        "~/Content/JS/plugins/pickers/pickadate/legacy.js",
+                        "~/Content/JS/plugins/notifications/jgrowl.min.js",
+                        
+                        "~/Content/JS/demo_pages/form_layouts.js",
+                        
+                        "~/Content/JS/plugins/forms/styling/switch.min.js",
+                        
+                        "~/Content/JS/plugins/extensions/jquery_ui/core.min.js",
+                        "~/Content/JS/plugins/forms/inputs/typeahead/typeahead.bundle.min.js",
+                        "~/Content/JS/plugins/forms/tags/tagsinput.min.js",
+                        "~/Content/JS/plugins/forms/tags/tokenfield.min.js",
+                        "~/Content/JS/plugins/forms/inputs/touchspin.min.js",
+                        "~/Content/JS/plugins/forms/inputs/maxlength.min.js",
+                        "~/Content/JS/plugins/forms/inputs/formatter.min.js",
+                        "~/Content/JS/plugins/notifications/pnotify.min.js",
+                        "~/Content/JS/plugins/ui/prism.min.js",
 
-            bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
-                        "~/Scripts/jquery.validate*"));
+                         "~/Content/JS/plugins/extensions/jquery_ui/interactions.min.js",
 
-            // Use the development version of Modernizr to develop with and learn from. Then, when you're
-            // ready for production, use the build tool at http://modernizr.com to pick only the tests you need.
-            bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
-                        "~/Scripts/modernizr-*"));
+                        "~/Content/JS/plugins/forms/wizards/steps.min.js",
+                        "~/Content/JS/plugins/forms/selects/select2.min.js",
+                        "~/Content/JS/plugins/forms/styling/uniform.min.js",
+                        "~/Content/JS/plugins/forms/inputs/inputmask.js",
+                        "~/Content/JS/plugins/forms/validation/validate.min.js",
+                        "~/Content/JS/plugins/extensions/cookie.js",
 
-            bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
-                      "~/Scripts/bootstrap.js",
-                      "~/Scripts/respond.js"));
 
-            bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+                       
+
+                        "~/Content/JS/app.js",
+                        "~/Content/JS/demo_pages/form_wizard.js",
+                        "~/Content/JS/demo_pages/form_select2.js",
+
+                       
+                        "~/Content/JS/JS/demo_pages/form_multiselect.js",
+                        "~/Content/JS/JS/demo_pages/form_tags_input.js",
+                        "~/Content/JS/demo_pages/form_validation.js",
+                        "~/Content/JS/demo_pages/form_input_groups.js",
+                        
+                        "~/Content/JS/demo_pages/dashboard.js",
+                        "~/Content/JS/demo_pages/form_actions.js",
+                        "~/Content/JS/demo_pages/form_checkboxes_radios.js",
+                        "~/Content/JS/demo_pages/form_floating_labels.js",
+                        "~/Content/JS/demo_pages/picker_date_rtl.js"));
+
+
+            bundles.Add(new StyleBundle("~/Content/CSS").Include(
+                "~/Content/CSS/styles.min.css",
+                "~/Content/CSS/bootstrap.min.css",
+                "~/Content/CSS/bootstrap_limitless.min.css",
+                "~/Content/CSS/layout.min.css",
+                "~/Content/CSS/components.min.css",
+                "~/Content/CSS/colors.min.css"));
         }
     }
 }
