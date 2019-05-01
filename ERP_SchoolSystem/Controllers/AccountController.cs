@@ -44,10 +44,6 @@ namespace ERP_SchoolSystem.Controllers
         {
             get
             {
-
-
-
-
                 return _userManager ?? HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
             }
             private set
@@ -76,9 +72,6 @@ namespace ERP_SchoolSystem.Controllers
             {
                 return View(model);
             }
-
-            // This doesn't count login failures towards account lockout
-            // To enable password failures to trigger account lockout, change to shouldLockout: true
             var result = await SignInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, shouldLockout: false);
             switch (result)
             {
@@ -91,6 +84,7 @@ namespace ERP_SchoolSystem.Controllers
                 case SignInStatus.Failure:
                 default:
                     ModelState.AddModelError("", "Invalid login attempt.");
+                    ViewBag.Message = "The user name or password provided is incorrect.";
                     return View(model);
             }
         }

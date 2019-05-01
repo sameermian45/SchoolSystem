@@ -167,6 +167,8 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Classes\DAL\DAL.cs" />
+    <Compile Include="Classes\DataAccess.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\DemoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -810,6 +812,19 @@
     <Content Include="Content\Loader\toastr.min.js" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="LoginPage\CSS\animate.min.css" />
+    <Content Include="LoginPage\CSS\fuse-html.min.css" />
+    <Content Include="LoginPage\CSS\main.css" />
+    <Content Include="LoginPage\CSS\perfect-scrollbar.css" />
+    <Content Include="LoginPage\CSS\style.css" />
+    <Content Include="LoginPage\dark-material-bg.jpg" />
+    <Content Include="LoginPage\JS\bootstrap.min.js" />
+    <Content Include="LoginPage\JS\fuse-html.min.js" />
+    <Content Include="LoginPage\JS\jquery.min.js" />
+    <Content Include="LoginPage\JS\main.js" />
+    <Content Include="LoginPage\JS\mobile-detect.min.js" />
+    <Content Include="LoginPage\JS\perfect-scrollbar.min.js" />
+    <Content Include="LoginPage\JS\popper.min.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -858,6 +873,8 @@
     <Content Include="global_assets\demo_data\dashboard\app_sales_heatmap.csv" />
     <Content Include="global_assets\demo_data\dashboard\traffic_sources.csv" />
     <Content Include="global_assets\demo_data\dashboard\bullets.json" />
+    <Content Include="LoginPage\CSS\fonts\fuse-iconfont.ttf" />
+    <Content Include="LoginPage\CSS\fonts\fuse-iconfont.woff" />
     <None Include="Project_Readme.html" />
     <Content Include="Views\Shared\SystemSidebar.cshtml" />
     <Content Include="Views\Demo\form_inputs.cshtml" />
@@ -874,6 +891,12 @@
     <Content Include="Views\Demo\picker_date.cshtml" />
     <Content Include="Views\Demo\form_layout_vertical.cshtml" />
     <Content Include="Views\Demo\form_layout_horizontal.cshtml" />
+    <Content Include="Views\Shared\_PartialLayout.cshtml" />
+    <Content Include="Views\Home\PageNotFound403.cshtml" />
+    <Content Include="Views\Home\PageNotFound404.cshtml" />
+    <Content Include="Views\Home\PageNotFound405.cshtml" />
+    <Content Include="Views\Home\PageNotFound500.cshtml" />
+    <Content Include="Views\Home\PageNotFound503.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
