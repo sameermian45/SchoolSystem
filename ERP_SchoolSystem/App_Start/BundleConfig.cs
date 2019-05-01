@@ -9,6 +9,10 @@ namespace ERP_SchoolSystem
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/Content/JS").Include(
+                        "~/Content/Loader/jquery-1.7.1.js",
+                        "~/Content/Loader/toastr.min.js",
+                        "~/Content/Loader/loader.js",
+                        "~/Content/Loader/jquery.maskedinput.js",
                         "~/Content/JS/main/jquery.min.js",
                         "~/Content/JS/main/bootstrap.bundle.min.js",
                         "~/Content/JS/plugins/loaders/blockui.min.js",
@@ -62,11 +66,13 @@ namespace ERP_SchoolSystem
                         "~/Content/JS/demo_pages/form_validation.js",
                         "~/Content/JS/demo_pages/form_input_groups.js",
                         
-                        "~/Content/JS/demo_pages/dashboard.js",
+                        
                         "~/Content/JS/demo_pages/form_actions.js",
                         "~/Content/JS/demo_pages/form_checkboxes_radios.js",
                         "~/Content/JS/demo_pages/form_floating_labels.js",
-                        "~/Content/JS/demo_pages/picker_date_rtl.js"));
+                        "~/Content/JS/demo_pages/picker_date_rtl.js",
+                        "~/Content/JS/demo_pages/dashboard.js")); 
+
 
 
             bundles.Add(new StyleBundle("~/Content/CSS").Include(
@@ -75,6 +81,9 @@ namespace ERP_SchoolSystem
                 "~/Content/CSS/bootstrap_limitless.min.css",
                 "~/Content/CSS/layout.min.css",
                 "~/Content/CSS/components.min.css",
+                "~/Content/Loader/Loader.css",
+                "~/Content/Loader/spinner.css",
+                "~/Content/Loader/toastr.min.css",
                 "~/Content/CSS/colors.min.css"));
         }
     }

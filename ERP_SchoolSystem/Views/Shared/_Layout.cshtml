@@ -6,14 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>The School System</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900" rel="stylesheet" type="text/css">
-
     @Styles.Render("~/Content/CSS")
-
-
-
 </head>
 <body>
-    <!-- Main navbar -->
+    
+    <div class="loader-backdrop hide" style="display: block;">
+        @*<div class="loading" id="LoadingSpinner">Loading&#8230;</div>*@
+        <div class="loader" style="top: 25%">
+            <img src="~/Content/Loader/Loading.gif" style="width: 100%;" />
+        </div>
+    </div>
     <div class="navbar navbar-expand-md navbar-light navbar-static">
         <!-- Header with logos -->
         <div class="navbar-header navbar-dark d-none d-md-flex align-items-md-center">
