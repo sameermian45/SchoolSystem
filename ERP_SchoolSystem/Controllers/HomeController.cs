@@ -10,21 +10,6 @@ namespace ERP_SchoolSystem.Controllers
     {
         public ActionResult Index()
         {
-            // Application Comments added by Sameer
-            return View();
-        }
-
-        public ActionResult About()
-        {
-            ViewBag.Message = "Your application some changes  page";
-
-            return View();
-        }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
             return View();
         }
     }
