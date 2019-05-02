@@ -3,6 +3,420 @@
     ViewBag.Title = "form_actions";
 }
 
+
+<div class="mb-3">
+    <h6 class="mb-0 font-weight-semibold">
+        Basic setup
+    </h6>
+    <span class="text-muted d-block">Examples with basic options</span>
+</div>
+<div class="row">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header header-elements-inline">
+                <h5 class="card-title">Single select</h5>
+                <div class="header-elements">
+                    <div class="list-icons">
+                        <a class="list-icons-item" data-action="collapse"></a>
+                        <a class="list-icons-item" data-action="reload"></a>
+                        <a class="list-icons-item" data-action="remove"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="form-group">
+                    <label>Basic select</label>
+                    <select class="form-control select" data-fouc>
+                        <optgroup label="Mountain Time Zone">
+                            <option value="AZ">Arizona</option>
+                            <option value="CO">Colorado</option>
+                            <option value="ID">Idaho</option>
+                            <option value="WY">Wyoming</option>
+                        </optgroup>
+                        <optgroup label="Central Time Zone">
+                            <option value="AL">Alabama</option>
+                            <option value="AR">Arkansas</option>
+                            <option value="KS">Kansas</option>
+                            <option value="KY">Kentucky</option>
+                        </optgroup>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="d-block">Fixed select width</label>
+                    <select class="form-control select-fixed-single" data-fouc>
+                        <optgroup label="Mountain Time Zone">
+                            <option value="AZ">Arizona</option>
+                            <option value="CO">Colorado</option>
+                            <option value="ID">Idaho</option>
+                            <option value="WY">Wyoming</option>
+                        </optgroup>
+                        <optgroup label="Central Time Zone">
+                            <option value="AL">Alabama</option>
+                            <option value="AR">Arkansas</option>
+                            <option value="KS">Kansas</option>
+                            <option value="KY">Kentucky</option>
+                        </optgroup>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Select with search</label>
+                    <select class="form-control select-search" data-fouc>
+                        <optgroup label="Mountain Time Zone">
+                            <option value="AZ">Arizona</option>
+                            <option value="CO">Colorado</option>
+                            <option value="ID">Idaho</option>
+                            <option value="WY">Wyoming</option>
+                        </optgroup>
+                        <optgroup label="Central Time Zone">
+                            <option value="AL">Alabama</option>
+                            <option value="IA">Iowa</option>
+                            <option value="KS">Kansas</option>
+                            <option value="KY">Kentucky</option>
+                        </optgroup>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Select with placeholder</label>
+                    <select data-placeholder="Select a State..." class="form-control select" data-fouc>
+                        <option></option>
+                        <optgroup label="Mountain Time Zone">
+                            <option value="AZ">Arizona</option>
+                            <option value="CO">Colorado</option>
+                            <option value="ID">Idaho</option>
+                            <option value="WY">Wyoming</option>
+                        </optgroup>
+                        <optgroup label="Central Time Zone">
+                            <option value="AL">Alabama</option>
+                            <option value="IA">Iowa</option>
+                            <option value="KS">Kansas</option>
+                            <option value="KY">Kentucky</option>
+                        </optgroup>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Select with icons</label>
+                    <select data-placeholder="Select a state..." class="form-control select-icons" data-fouc>
+                        <optgroup label="Services">
+                            <option value="wordpress2" data-icon="wordpress2">Wordpress</option>
+                            <option value="tumblr2" data-icon="tumblr2">Tumblr</option>
+                            <option value="stumbleupon" data-icon="stumbleupon">Stumble upon</option>
+                            <option value="pinterest2" data-icon="pinterest2">Pinterest</option>
+                            <option value="lastfm2" data-icon="lastfm2">Lastfm</option>
+                        </optgroup>
+                        <optgroup label="File types">
+                            <option value="pdf" data-icon="file-pdf">PDF</option>
+                            <option value="word" data-icon="file-word">Word</option>
+                            <option value="excel" data-icon="file-excel">Excel</option>
+                            <option value="openoffice" data-icon="file-openoffice">Open office</option>
+                        </optgroup>
+                        <optgroup label="Browsers">
+                            <option value="chrome" data-icon="chrome" selected>Chrome</option>
+                            <option value="firefox" data-icon="firefox">Firefox</option>
+                            <option value="safari" data-icon="safari">Safari</option>
+                            <option value="opera" data-icon="opera">Opera</option>
+                            <option value="IE" data-icon="IE">IE</option>
+                        </optgroup>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Disable items</label>
+                    <select class="form-control select" data-fouc>
+                        <optgroup label="Mountain Time Zone">
+                            <option value="AZ" disabled>Arizona</option>
+                            <option value="CO">Colorado</option>
+                            <option value="ID" disabled>Idaho</option>
+                            <option value="WY" disabled>Wyoming</option>
+                        </optgroup>
+                        <optgroup label="Central Time Zone">
+                            <option value="AL">Alabama</option>
+                            <option value="AR" disabled>Arkansas</option>
+                            <option value="KS">Kansas</option>
+                            <option value="KY" disabled>Kentucky</option>
+                        </optgroup>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Disabled select</label>
+                    <select class="form-control select" disabled data-fouc>
+                        <option value="AZ">Arizona</option>
+                        <option value="CO">Colorado</option>
+                        <option value="ID">Idaho</option>
+                        <option value="WY">Wyoming</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Select background color</label>
+                    <select class="form-control select" data-container-css-class="bg-teal-400" data-fouc>
+                        <optgroup label="Mountain Time Zone">
+                            <option value="AZ">Arizona</option>
+                            <option value="CO">Colorado</option>
+                            <option value="ID">Idaho</option>
+                            <option value="WY">Wyoming</option>
+                        </optgroup>
+                        <optgroup label="Central Time Zone">
+                            <option value="AL">Alabama</option>
+                            <option value="IA">Iowa</option>
+                            <option value="KS">Kansas</option>
+                            <option value="KY">Kentucky</option>
+                        </optgroup>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Menu background color</label>
+                    <select class="form-control select" data-dropdown-css-class="bg-teal-400" data-fouc>
+                        <optgroup label="Mountain Time Zone">
+                            <option value="AZ">Arizona</option>
+                            <option value="CO">Colorado</option>
+                            <option value="ID">Idaho</option>
+                            <option value="WY">Wyoming</option>
+                        </optgroup>
+                        <optgroup label="Central Time Zone">
+                            <option value="AL">Alabama</option>
+                            <option value="IA">Iowa</option>
+                            <option value="KS">Kansas</option>
+                            <option value="KY">Kentucky</option>
+                        </optgroup>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Custom color</label>
+                    <select class="form-control select" data-container-css-class="bg-indigo-400" data-dropdown-css-class="bg-indigo-400" data-fouc>
+                        <optgroup label="Mountain Time Zone">
+                            <option value="AZ">Arizona</option>
+                            <option value="CO">Colorado</option>
+                            <option value="ID">Idaho</option>
+                            <option value="WY">Wyoming</option>
+                        </optgroup>
+                        <optgroup label="Central Time Zone">
+                            <option value="AL">Alabama</option>
+                            <option value="IA">Iowa</option>
+                            <option value="KS">Kansas</option>
+                            <option value="KY">Kentucky</option>
+                        </optgroup>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Custom border and text color</label>
+                    <select class="form-control select" data-container-css-class="border-primary text-primary-700" data-dropdown-css-class="border-primary" data-fouc>
+                        <optgroup label="Mountain Time Zone">
+                            <option value="AZ">Arizona</option>
+                            <option value="CO">Colorado</option>
+                            <option value="ID">Idaho</option>
+                            <option value="WY">Wyoming</option>
+                        </optgroup>
+                        <optgroup label="Central Time Zone">
+                            <option value="AL">Alabama</option>
+                            <option value="IA">Iowa</option>
+                            <option value="KS">Kansas</option>
+                            <option value="KY">Kentucky</option>
+                        </optgroup>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header header-elements-inline">
+                <h5 class="card-title">Multiple select</h5>
+                <div class="header-elements">
+                    <div class="list-icons">
+                        <a class="list-icons-item" data-action="collapse"></a>
+                        <a class="list-icons-item" data-action="reload"></a>
+                        <a class="list-icons-item" data-action="remove"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="form-group">
+                    <label>Multiple select</label>
+                    <select multiple="multiple" class="form-control select" data-fouc>
+                        <optgroup label="Mountain Time Zone">
+                            <option value="AZ" selected>Arizona</option>
+                            <option value="CO">Colorado</option>
+                            <option value="ID">Idaho</option>
+                            <option value="WY">Wyoming</option>
+                        </optgroup>
+                        <optgroup label="Central Time Zone">
+                            <option value="AL">Alabama</option>
+                            <option value="IA" selected>Iowa</option>
+                            <option value="KS" selected>Kansas</option>
+                            <option value="KY">Kentucky</option>
+                        </optgroup>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="d-block">Fixed width select</label>
+                    <select multiple="multiple" class="form-control select-fixed-multiple" data-fouc>
+                        <optgroup label="Mountain Time Zone">
+                            <option value="AZ" selected>Arizona</option>
+                            <option value="CO">Colorado</option>
+                            <option value="ID">Idaho</option>
+                            <option value="WY">Wyoming</option>
+                        </optgroup>
+                        <optgroup label="Central Time Zone">
+                            <option value="AL">Alabama</option>
+                            <option value="IA">Iowa</option>
+                            <option value="KS" selected>Kansas</option>
+                            <option value="KY">Kentucky</option>
+                        </optgroup>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>With placeholder</label>
+                    <select data-placeholder="Select a State..." multiple="multiple" class="form-control select" data-fouc>
+                        <option></option>
+                        <optgroup label="Mountain Time Zone">
+                            <option value="AZ">Arizona</option>
+                            <option value="CO">Colorado</option>
+                            <option value="ID">Idaho</option>
+                            <option value="WY">Wyoming</option>
+                        </optgroup>
+                        <optgroup label="Central Time Zone">
+                            <option value="AL">Alabama</option>
+                            <option value="IA">Iowa</option>
+                            <option value="KS">Kansas</option>
+                            <option value="KY">Kentucky</option>
+                        </optgroup>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>With icons</label>
+                    <select multiple="multiple" data-placeholder="Select a state..." class="form-control select-icons" data-fouc>
+                        <optgroup label="Services">
+                            <option value="wordpress2" data-icon="wordpress2">Wordpress</option>
+                            <option value="tumblr2" data-icon="tumblr2">Tumblr</option>
+                            <option value="stumbleupon" data-icon="stumbleupon">Stumble upon</option>
+                            <option value="pinterest2" data-icon="pinterest2">Pinterest</option>
+                            <option value="lastfm2" data-icon="lastfm2">Lastfm</option>
+                        </optgroup>
+                        <optgroup label="File types">
+                            <option value="pdf" data-icon="file-pdf">PDF</option>
+                            <option value="word" data-icon="file-word">Word</option>
+                            <option value="excel" data-icon="file-excel">Excel</option>
+                            <option value="openoffice" data-icon="file-openoffice">Open office</option>
+                        </optgroup>
+                        <optgroup label="Browsers">
+                            <option value="chrome" data-icon="chrome" selected>Chrome</option>
+                            <option value="firefox" data-icon="firefox" selected>Firefox</option>
+                            <option value="safari" data-icon="safari" selected>Safari</option>
+                            <option value="opera" data-icon="opera">Opera</option>
+                            <option value="IE" data-icon="IE">IE</option>
+                        </optgroup>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Drag and drop sorting</label>
+                    <select class="form-control select-multiple-drag" multiple="multiple" data-fouc>
+                        <option value="AZ" selected>Arizona</option>
+                        <option value="CO">Colorado</option>
+                        <option value="ID">Idaho</option>
+                        <option value="WY">Wyoming</option>
+                        <option value="IL" selected>Illinois</option>
+                        <option value="IA">Iowa</option>
+                        <option value="KS">Kansas</option>
+                        <option value="KY">Kentucky</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Disable menu items</label>
+                    <select multiple="multiple" class="form-control select" data-fouc>
+                        <optgroup label="Mountain Time Zone">
+                            <option value="AZ" disabled>Arizona</option>
+                            <option value="CO">Colorado</option>
+                            <option value="ID" disabled>Idaho</option>
+                            <option value="WY" selected>Wyoming</option>
+                        </optgroup>
+                        <optgroup label="Central Time Zone">
+                            <option value="AL">Alabama</option>
+                            <option value="AR" selected>Arkansas</option>
+                            <option value="KS">Kansas</option>
+                            <option value="KY" disabled>Kentucky</option>
+                        </optgroup>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Disabled select</label>
+                    <select multiple="multiple" class="form-control select" disabled data-fouc>
+                        <option value="AZ" selected>Arizona</option>
+                        <option value="CO">Colorado</option>
+                        <option value="ID" selected>Idaho</option>
+                        <option value="WY" selected>Wyoming</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Results background color</label>
+                    <select multiple="multiple" class="form-control select" data-container-css-class="bg-teal-400" data-fouc>
+                        <optgroup label="Mountain Time Zone">
+                            <option value="AZ" selected>Arizona</option>
+                            <option value="CO">Colorado</option>
+                            <option value="ID">Idaho</option>
+                            <option value="WY">Wyoming</option>
+                        </optgroup>
+                        <optgroup label="Central Time Zone">
+                            <option value="IL" selected>Illinois</option>
+                            <option value="IA">Iowa</option>
+                            <option value="KS" selected>Kansas</option>
+                            <option value="KY">Kentucky</option>
+                        </optgroup>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Menu background color</label>
+                    <select multiple="multiple" class="form-control select" data-dropdown-css-class="bg-slate-700" data-fouc>
+                        <optgroup label="Mountain Time Zone">
+                            <option value="AZ" selected>Arizona</option>
+                            <option value="CO">Colorado</option>
+                            <option value="ID">Idaho</option>
+                            <option value="WY">Wyoming</option>
+                        </optgroup>
+                        <optgroup label="Central Time Zone">
+                            <option value="IL" selected>Illinois</option>
+                            <option value="IA">Iowa</option>
+                            <option value="KS" selected>Kansas</option>
+                            <option value="KY">Kentucky</option>
+                        </optgroup>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Custom colors</label>
+                    <select multiple="multiple" class="form-control select" data-container-css-class="bg-indigo-400" data-dropdown-css-class="bg-indigo-400" data-fouc>
+                        <optgroup label="Mountain Time Zone">
+                            <option value="AZ" selected>Arizona</option>
+                            <option value="CO">Colorado</option>
+                            <option value="ID">Idaho</option>
+                            <option value="WY">Wyoming</option>
+                        </optgroup>
+                        <optgroup label="Central Time Zone">
+                            <option value="IL" selected>Illinois</option>
+                            <option value="IA">Iowa</option>
+                            <option value="KS" selected>Kansas</option>
+                            <option value="KY">Kentucky</option>
+                        </optgroup>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Custom border color</label>
+                    <select multiple="multiple" class="form-control select" data-container-css-class="border-primary text-primary-700" data-dropdown-css-class="border-primary" data-fouc>
+                        <optgroup label="Mountain Time Zone">
+                            <option value="AZ" selected>Arizona</option>
+                            <option value="CO">Colorado</option>
+                            <option value="ID">Idaho</option>
+                            <option value="WY">Wyoming</option>
+                        </optgroup>
+                        <optgroup label="Central Time Zone">
+                            <option value="IL" selected>Illinois</option>
+                            <option value="IA">Iowa</option>
+                            <option value="KS" selected>Kansas</option>
+                            <option value="KY">Kentucky</option>
+                        </optgroup>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 <div class="mb-3">
     <h6 class="mb-0 font-weight-semibold">
         Form action components

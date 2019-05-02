@@ -2,13 +2,6 @@
 @{
     ViewBag.Title = "form_validation";
 }
-<script>
-
-    $(function () {
-        $('#CNCI').mask('99999-9999999-9');
-    });
-
-</script>
 <div class="card">
     <div class="card-header header-elements-inline">
         <h5 class="card-title">Form validation</h5>
@@ -29,7 +22,7 @@
                 <div class="form-group row">
                     <label class="col-form-label col-lg-3">Basic text input <span class="text-danger">*</span></label>
                     <div class="col-lg-9">
-                        <input type="text" name="basic" id="CNCI" class="form-control" required placeholder="Text input validation">
+                        <input type="text" name="basic" id="CNCI" data-mask="aa-99-9999-9999" class="form-control" required placeholder="Text input validation">
                     </div>
                 </div>
                 <!-- /basic text input -->
