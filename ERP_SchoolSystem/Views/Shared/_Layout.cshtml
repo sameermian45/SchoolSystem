@@ -9,8 +9,6 @@
     <script src="~/Content/Loader/jquery-1.7.1.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900" rel="stylesheet" type="text/css">
     @Styles.Render("~/Content/CSS")
-
-    
 </head>
 <body>
     <div class="Contentloading" id="LoadingSpinner">Loading&#8230;</div>
@@ -341,7 +339,6 @@
 
                         <a href="#" class="header-elements-toggle text-default d-md-none"><i class="icon-more"></i></a>
                     </div>
-
                     <div class="header-elements d-none">
                         <div class="breadcrumb justify-content-center">
                             <a href="#" class="breadcrumb-elements-item">
@@ -370,24 +367,7 @@
             <div class="content">
                 @RenderBody()
             </div>
-            <div class="navbar navbar-expand-lg navbar-light">
-                <div class="text-center d-lg-none w-100">
-                    <button type="button" class="navbar-toggler dropdown-toggle" data-toggle="collapse" data-target="#navbar-footer">
-                        <i class="icon-unfold mr-2"></i>
-                        Footer
-                    </button>
-                </div>
-                <div class="navbar-collapse collapse" id="navbar-footer">
-                    <span class="navbar-text">
-                        &copy; @DateTime.Now.Year. <a href="#">The School System</a> Developed by <a href="#">ZS Software Consultancy (Pvt.) Limited. </a>
-                    </span>
-                    <ul class="navbar-nav ml-lg-auto">
-                        <li class="nav-item"><a href="#" class="navbar-nav-link"><i class="icon-lifebuoy mr-2"></i> Support</a></li>
-                        <li class="nav-item"><a href="#" class="navbar-nav-link"><i class="icon-file-text2 mr-2"></i> Docs</a></li>
-                        <li class="nav-item"><a href="#" class="navbar-nav-link font-weight-semibold"><span class="text-pink-400"><i class="icon-cart2 mr-2"></i> Purchase</span></a></li>
-                    </ul>
-                </div>
-            </div>
+           @Html.Partial("Footer")
         </div>
     </div>
     @Scripts.Render("~/Content/JS")
