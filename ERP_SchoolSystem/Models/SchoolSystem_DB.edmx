@@ -1,0 +1,200 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="ERP_SchoolSystemModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="TblCities">
+          <Key>
+            <PropertyRef Name="CityID" />
+          </Key>
+          <Property Name="CityID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CityName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ProvincesID" Type="int" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TblCountries">
+          <Key>
+            <PropertyRef Name="CountryID" />
+          </Key>
+          <Property Name="CountryID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CountryName" Type="nvarchar" MaxLength="60" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TblProvinces">
+          <Key>
+            <PropertyRef Name="ProvincesID" />
+          </Key>
+          <Property Name="ProvincesID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProvincesName" Type="nvarchar" MaxLength="60" Nullable="false" />
+          <Property Name="CountryID" Type="int" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_TblCities_TblCities">
+          <End Role="TblProvinces" Type="Self.TblProvinces" Multiplicity="1" />
+          <End Role="TblCities" Type="Self.TblCities" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TblProvinces">
+              <PropertyRef Name="ProvincesID" />
+            </Principal>
+            <Dependent Role="TblCities">
+              <PropertyRef Name="ProvincesID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TblProvinces_TblProvinces">
+          <End Role="TblCountries" Type="Self.TblCountries" Multiplicity="1" />
+          <End Role="TblProvinces" Type="Self.TblProvinces" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TblCountries">
+              <PropertyRef Name="CountryID" />
+            </Principal>
+            <Dependent Role="TblProvinces">
+              <PropertyRef Name="CountryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ERP_SchoolSystemModelStoreContainer">
+          <EntitySet Name="TblCities" EntityType="Self.TblCities" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblCountries" EntityType="Self.TblCountries" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblProvinces" EntityType="Self.TblProvinces" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_TblCities_TblCities" Association="Self.FK_TblCities_TblCities">
+            <End Role="TblProvinces" EntitySet="TblProvinces" />
+            <End Role="TblCities" EntitySet="TblCities" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TblProvinces_TblProvinces" Association="Self.FK_TblProvinces_TblProvinces">
+            <End Role="TblCountries" EntitySet="TblCountries" />
+            <End Role="TblProvinces" EntitySet="TblProvinces" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ERP_SchoolSystemModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="ERP_SchoolSystemEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="TblCities" EntityType="ERP_SchoolSystemModel.TblCity" />
+          <EntitySet Name="TblCountries" EntityType="ERP_SchoolSystemModel.TblCountry" />
+          <EntitySet Name="TblProvinces" EntityType="ERP_SchoolSystemModel.TblProvince" />
+          <AssociationSet Name="FK_TblCities_TblCities" Association="ERP_SchoolSystemModel.FK_TblCities_TblCities">
+            <End Role="TblProvince" EntitySet="TblProvinces" />
+            <End Role="TblCity" EntitySet="TblCities" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TblProvinces_TblProvinces" Association="ERP_SchoolSystemModel.FK_TblProvinces_TblProvinces">
+            <End Role="TblCountry" EntitySet="TblCountries" />
+            <End Role="TblProvince" EntitySet="TblProvinces" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="TblCity">
+          <Key>
+            <PropertyRef Name="CityID" />
+          </Key>
+          <Property Name="CityID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CityName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ProvincesID" Type="Int32" Nullable="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="TblProvince" Relationship="ERP_SchoolSystemModel.FK_TblCities_TblCities" FromRole="TblCity" ToRole="TblProvince" />
+        </EntityType>
+        <EntityType Name="TblCountry">
+          <Key>
+            <PropertyRef Name="CountryID" />
+          </Key>
+          <Property Name="CountryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CountryName" Type="String" Nullable="false" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="TblProvinces" Relationship="ERP_SchoolSystemModel.FK_TblProvinces_TblProvinces" FromRole="TblCountry" ToRole="TblProvince" />
+        </EntityType>
+        <EntityType Name="TblProvince">
+          <Key>
+            <PropertyRef Name="ProvincesID" />
+          </Key>
+          <Property Name="ProvincesID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProvincesName" Type="String" Nullable="false" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="CountryID" Type="Int32" Nullable="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="TblCities" Relationship="ERP_SchoolSystemModel.FK_TblCities_TblCities" FromRole="TblProvince" ToRole="TblCity" />
+          <NavigationProperty Name="TblCountry" Relationship="ERP_SchoolSystemModel.FK_TblProvinces_TblProvinces" FromRole="TblProvince" ToRole="TblCountry" />
+        </EntityType>
+        <Association Name="FK_TblCities_TblCities">
+          <End Type="ERP_SchoolSystemModel.TblProvince" Role="TblProvince" Multiplicity="1" />
+          <End Type="ERP_SchoolSystemModel.TblCity" Role="TblCity" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TblProvince">
+              <PropertyRef Name="ProvincesID" />
+            </Principal>
+            <Dependent Role="TblCity">
+              <PropertyRef Name="ProvincesID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TblProvinces_TblProvinces">
+          <End Type="ERP_SchoolSystemModel.TblCountry" Role="TblCountry" Multiplicity="1" />
+          <End Type="ERP_SchoolSystemModel.TblProvince" Role="TblProvince" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TblCountry">
+              <PropertyRef Name="CountryID" />
+            </Principal>
+            <Dependent Role="TblProvince">
+              <PropertyRef Name="CountryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ERP_SchoolSystemModelStoreContainer" CdmEntityContainer="ERP_SchoolSystemEntities">
+          <EntitySetMapping Name="TblCities">
+            <EntityTypeMapping TypeName="ERP_SchoolSystemModel.TblCity">
+              <MappingFragment StoreEntitySet="TblCities">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="ProvincesID" ColumnName="ProvincesID" />
+                <ScalarProperty Name="CityName" ColumnName="CityName" />
+                <ScalarProperty Name="CityID" ColumnName="CityID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblCountries">
+            <EntityTypeMapping TypeName="ERP_SchoolSystemModel.TblCountry">
+              <MappingFragment StoreEntitySet="TblCountries">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="CountryName" ColumnName="CountryName" />
+                <ScalarProperty Name="CountryID" ColumnName="CountryID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblProvinces">
+            <EntityTypeMapping TypeName="ERP_SchoolSystemModel.TblProvince">
+              <MappingFragment StoreEntitySet="TblProvinces">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="CountryID" ColumnName="CountryID" />
+                <ScalarProperty Name="ProvincesName" ColumnName="ProvincesName" />
+                <ScalarProperty Name="ProvincesID" ColumnName="ProvincesID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
