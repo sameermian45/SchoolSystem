@@ -8,6 +8,11 @@ namespace ERP_SchoolSystem.Controllers
 {
     public class DemoController : Controller
     {
+
+        public ActionResult DataTable()
+        {
+            return View();
+        }
         public ActionResult form_inputs()
         {
             return View();

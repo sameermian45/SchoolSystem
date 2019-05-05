@@ -9,6 +9,8 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using ERP_SchoolSystem.Models;
+using System.Web.Security;
+using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace ERP_SchoolSystem.Controllers
 {
@@ -19,10 +21,10 @@ namespace ERP_SchoolSystem.Controllers
         private ApplicationUserManager _userManager;
 
         public AccountController()
-        {      
+        {
         }
 
-        public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager )
+        public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager)
         {
             UserManager = userManager;
             SignInManager = signInManager;
@@ -34,9 +36,9 @@ namespace ERP_SchoolSystem.Controllers
             {
                 return _signInManager ?? HttpContext.GetOwinContext().Get<ApplicationSignInManager>();
             }
-            private set 
-            { 
-                _signInManager = value; 
+            private set
+            {
+                _signInManager = value;
             }
         }
 
@@ -52,6 +54,11 @@ namespace ERP_SchoolSystem.Controllers
             }
         }
 
+        [AllowAnonymous]
+        public ActionResult AccessDenied()
+        {
+            return View();
+        }
         //
         // GET: /Account/Login
         [AllowAnonymous]
@@ -68,6 +75,8 @@ namespace ERP_SchoolSystem.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Login(LoginViewModel model, string returnUrl)
         {
+            var ab = User.Identity.GetUserId();
+            // var aa = HttpContext.Current.User.Identity.GetUserId();
             if (!ModelState.IsValid)
             {
                 return View(model);
@@ -113,53 +122,25 @@ namespace ERP_SchoolSystem.Controllers
             {
                 return View(model);
             }
-
-            // The following code protects for brute force attacks against the two factor codes. 
-            // If a user enters incorrect codes for a specified amount of time then the user account 
-            // will be locked out for a specified amount of time. 
-            // You can configure the account lockout settings in IdentityConfig
-            var result = await SignInManager.TwoFactorSignInAsync(model.Provider, model.Code, isPersistent:  model.RememberMe, rememberBrowser: model.RememberBrowser);
+            var result = await SignInManager.TwoFactorSignInAsync(model.Provider, model.Code, isPersistent: model.RememberMe, rememberBrowser: model.RememberBrowser);
             switch (result)
             {
                 case SignInStatus.Success:
-                    return RedirectToLocal(model.ReturnUrl);
+                    {
+                        return RedirectToLocal(model.ReturnUrl);
+                    }
                 case SignInStatus.LockedOut:
-                    return View("Lockout");
+                    {
+                        return View("Lockout");
+                    }
                 case SignInStatus.Failure:
                 default:
                     ModelState.AddModelError("", "Invalid code.");
                     return View(model);
             }
         }
-
-        //
-        // GET: /Account/Register
-        [AllowAnonymous]
-        public ActionResult Register()
-        {
-            return View();
-        }
-
-        //
-        // POST: /Account/Register
-        [HttpPost]
-        [AllowAnonymous]
-        [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Register(RegisterViewModel model)
-        {
-            if (ModelState.IsValid)
-            {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
-                var result = await UserManager.CreateAsync(user, model.Password);
-                if (result.Succeeded)
-                {
-                    await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
-                    return RedirectToAction("Index", "Home");
-                }
-                AddErrors(result);
-            }
-            return View(model);
-        }
+        
+       
 
         //
         // GET: /Account/ConfirmEmail
@@ -297,7 +278,6 @@ namespace ERP_SchoolSystem.Controllers
             {
                 return View();
             }
-
             // Generate the token and send it
             if (!await SignInManager.SendTwoFactorCodeAsync(model.SelectedProvider))
             {

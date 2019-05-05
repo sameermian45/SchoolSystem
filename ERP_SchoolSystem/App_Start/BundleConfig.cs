@@ -16,6 +16,8 @@ namespace ERP_SchoolSystem
                         "~/Content/JS/main/bootstrap.bundle.min.js",
                         "~/Content/JS/plugins/loaders/blockui.min.js",
                         "~/Content/JS/plugins/ui/ripple.min.js",
+                        //Datatable
+                        "~/Content/JS/plugins/tables/datatables/datatables.min.js",
                         //wizards
                         "~/Content/JS/plugins/forms/wizards/steps.min.js",
                         "~/Content/JS/plugins/forms/styling/uniform.min.js",
@@ -31,6 +33,9 @@ namespace ERP_SchoolSystem
                         "~/Content/JS/plugins/pickers/pickadate/picker.time.js",
                         "~/Content/JS/plugins/pickers/pickadate/legacy.js",
                         "~/Content/JS/plugins/notifications/jgrowl.min.js",
+
+
+
                         //select2
                         "~/Content/JS/plugins/forms/selects/select2.min.js",
                         //charts
@@ -52,6 +57,7 @@ namespace ERP_SchoolSystem
 
 
                         "~/Content/JS/app.js",
+                        "~/Content/JS/demo_pages/datatables_basic.js",
                         "~/Content/JS/demo_pages/form_select2.js",
                        "~/Content/JS/demo_pages/form_wizard.js",
                         "~/Content/JS/JS/demo_pages/form_multiselect.js",
@@ -62,6 +68,7 @@ namespace ERP_SchoolSystem
                         "~/Content/JS/demo_pages/form_checkboxes_radios.js",
                         "~/Content/JS/demo_pages/form_floating_labels.js",
                         "~/Content/JS/demo_pages/picker_date.js",
+
                         "~/Content/JS/demo_pages/form_layouts.js",
                         "~/Content/JS/demo_pages/dashboard.js"));
 

@@ -25,8 +25,14 @@ namespace ERP_SchoolSystem.Models
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<AspNetRole> AspNetRoles { get; set; }
+        public virtual DbSet<AspNetUserRole> AspNetUserRoles { get; set; }
+        public virtual DbSet<AspNetUser> AspNetUsers { get; set; }
         public virtual DbSet<TblCity> TblCities { get; set; }
         public virtual DbSet<TblCountry> TblCountries { get; set; }
         public virtual DbSet<TblProvince> TblProvinces { get; set; }
+        public virtual DbSet<TblSchool> TblSchools { get; set; }
+        public virtual DbSet<TblSchoolPackage> TblSchoolPackages { get; set; }
+        public virtual DbSet<TblUserType> TblUserTypes { get; set; }
     }
 }

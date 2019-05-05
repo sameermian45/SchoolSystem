@@ -172,16 +172,29 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Classes\DAL\DAL.cs" />
     <Compile Include="Classes\DataAccess.cs" />
+    <Compile Include="Classes\Encrypt_Decrypt.cs" />
+    <Compile Include="Classes\UserInfo.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\DemoController.cs" />
     <Compile Include="Controllers\EmployeeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\SchoolController.cs" />
+    <Compile Include="Controllers\UserRolesController.cs" />
+    <Compile Include="Filter\CustomAuthorizeAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\AspNetRole.cs">
+      <DependentUpon>SchoolSystem_DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AspNetUser.cs">
+      <DependentUpon>SchoolSystem_DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AspNetUserRole.cs">
+      <DependentUpon>SchoolSystem_DB.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\SchoolSystem_DB.Context.cs">
@@ -206,6 +219,15 @@
       <DependentUpon>SchoolSystem_DB.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\TblProvince.cs">
+      <DependentUpon>SchoolSystem_DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TblSchool.cs">
+      <DependentUpon>SchoolSystem_DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TblSchoolPackage.cs">
+      <DependentUpon>SchoolSystem_DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TblUserType.cs">
       <DependentUpon>SchoolSystem_DB.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -780,6 +802,7 @@
     <Content Include="Content\JS\plugins\sliders\nouislider.min.js" />
     <Content Include="Content\JS\plugins\sliders\slider_pips.min.js" />
     <Content Include="Content\JS\plugins\sliders\slider_pips.rtl.min.js" />
+    <Content Include="Content\JS\plugins\tables\datatables\datatables.min.js" />
     <Content Include="Content\JS\plugins\tables\datatables\extensions\autofill.min.js" />
     <Content Include="Content\JS\plugins\tables\datatables\extensions\buttons.min.js" />
     <Content Include="Content\JS\plugins\tables\datatables\extensions\col_reorder.min.js" />
@@ -949,6 +972,11 @@
     <Content Include="Views\School\AddNewSchool.cshtml" />
     <Content Include="Views\School\GetProvincesList.cshtml" />
     <Content Include="Views\School\GetCitiesList.cshtml" />
+    <Content Include="Views\Account\AccessDenied.cshtml" />
+    <Content Include="Views\UserRoles\SystemRoles.cshtml" />
+    <Content Include="Views\UserRoles\AssignUserRoles.cshtml" />
+    <Content Include="Views\Demo\DataTable.cshtml" />
+    <Content Include="Views\UserRoles\UserRoles_Partial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
