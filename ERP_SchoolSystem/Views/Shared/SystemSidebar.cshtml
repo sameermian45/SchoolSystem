@@ -47,5 +47,19 @@
                 <li class="nav-item"><a href='@Url.Action("form_layout_horizontal","Demo")' class="nav-link">Horizontal form</a></li>
             </ul>
         </li>
+        <li class="nav-item nav-item-submenu">
+            <a href="#" class="nav-link"><i class="icon-copy"></i> <span>HRM</span></a>
+            <ul class="nav nav-group-sub" data-submenu-title="form components">
+                <li class="nav-item"><a href='@Url.Action("CreateEmploye","Employee")' class="nav-link">Add New Employee</a></li>
+                <li class="nav-item"><a href='@Url.Action("Employee","Index")' class="nav-link">All Employee</a></li>
+
+            </ul>
+        </li>
+        <li class="nav-item nav-item-submenu">
+            <a href="#" class="nav-link"><i class="icon-copy"></i> <span>Master</span></a>
+            <ul class="nav nav-group-sub" data-submenu-title="form components">
+                <li class="nav-item"><a href='@Url.Action("DepartmentIndex","Master")' class="nav-link">All Departments</a></li>
+            </ul>
+        </li>
     </ul>
 </div>

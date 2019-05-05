@@ -12,13 +12,14 @@ namespace ERP_SchoolSystem.Controllers
     {
         
         public ActionResult Index()
+
         {
             return View();
         }
 
         public ActionResult PageNotFound403()
         {
-            DataSet ds = ERP_SchoolSystem.Classes.DAL.DAL.VerifyTaxFiler("","","");
+            //DataSet ds = ERP_SchoolSystem.Classes.DAL.DAL.VerifyTaxFiler("","","");
 
 
             return View();

@@ -49,8 +49,9 @@ namespace ERP_SchoolSystem
                         "~/Content/JS/plugins/notifications/pnotify.min.js",
                         "~/Content/JS/plugins/ui/prism.min.js",
                         "~/Content/JS/plugins/extensions/jquery_ui/interactions.min.js",
-
-
+                        "~/Content/JS/plugins/tables/datatables/datatables.min.js",
+                         "~/Content/JS/plugins/tables/datatables/extensions/responsive.min.js",
+                         "~/Content/JS/demo_pages/datatables_responsive.js",
                         "~/Content/JS/app.js",
                         "~/Content/JS/demo_pages/form_select2.js",
                        "~/Content/JS/demo_pages/form_wizard.js",

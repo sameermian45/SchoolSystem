@@ -172,18 +172,65 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Classes\DAL\DAL.cs" />
     <Compile Include="Classes\DataAccess.cs" />
+    <Compile Include="Classes\HelperClasses\JsonResponce.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\DemoController.cs" />
     <Compile Include="Controllers\EmployeeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\MasterController.cs" />
     <Compile Include="Controllers\SchoolController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\City.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Country.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Department.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Digree.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Employee.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Experiecne.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Gender.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Province.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Qualification.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\School.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -672,6 +719,7 @@
     <Content Include="Content\JS\demo_pages\widgets_stats.js" />
     <Content Include="Content\JS\main\bootstrap.bundle.min.js" />
     <Content Include="Content\JS\main\jquery.min.js" />
+    <Content Include="Content\JS\MasterJs\Master.js" />
     <Content Include="Content\JS\plugins\buttons\hover_dropdown.min.js" />
     <Content Include="Content\JS\plugins\buttons\ladda.min.js" />
     <Content Include="Content\JS\plugins\buttons\spin.min.js" />
@@ -755,6 +803,7 @@
     <Content Include="Content\JS\plugins\sliders\nouislider.min.js" />
     <Content Include="Content\JS\plugins\sliders\slider_pips.min.js" />
     <Content Include="Content\JS\plugins\sliders\slider_pips.rtl.min.js" />
+    <Content Include="Content\JS\plugins\tables\datatables\datatables.min.js" />
     <Content Include="Content\JS\plugins\tables\datatables\extensions\autofill.min.js" />
     <Content Include="Content\JS\plugins\tables\datatables\extensions\buttons.min.js" />
     <Content Include="Content\JS\plugins\tables\datatables\extensions\col_reorder.min.js" />
@@ -830,6 +879,16 @@
     <Content Include="LoginPage\JS\mobile-detect.min.js" />
     <Content Include="LoginPage\JS\perfect-scrollbar.min.js" />
     <Content Include="LoginPage\JS\popper.min.js" />
+    <Content Include="Models\Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -881,6 +940,13 @@
     <Content Include="global_assets\demo_data\dashboard\bullets.json" />
     <Content Include="LoginPage\CSS\fonts\fuse-iconfont.ttf" />
     <Content Include="LoginPage\CSS\fonts\fuse-iconfont.woff" />
+    <EntityDeploy Include="Models\Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Content>
     <None Include="Project_Readme.html" />
     <Content Include="Views\Shared\SystemSidebar.cshtml" />
     <Content Include="Views\Demo\form_inputs.cshtml" />
@@ -905,6 +971,7 @@
     <Content Include="Views\Home\PageNotFound503.cshtml" />
     <Content Include="Views\Shared\Footer.cshtml" />
     <Content Include="Views\School\AddNewSchool.cshtml" />
+    <Content Include="Views\Master\DepartmentIndex.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
