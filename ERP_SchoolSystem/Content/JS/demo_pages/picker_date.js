@@ -61,7 +61,8 @@ var DateTimePickers = function() {
         });
 
         // Single picker
-        $('.daterange-single').daterangepicker({ 
+        $('.daterange-single').daterangepicker({
+
             singleDatePicker: true
         });
 

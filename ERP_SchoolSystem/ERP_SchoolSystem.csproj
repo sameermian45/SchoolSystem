@@ -172,64 +172,63 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Classes\DAL\DAL.cs" />
     <Compile Include="Classes\DataAccess.cs" />
-    <Compile Include="Classes\HelperClasses\JsonResponce.cs" />
+    <Compile Include="Classes\Encrypt_Decrypt.cs" />
+    <Compile Include="Classes\UserInfo.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\DemoController.cs" />
     <Compile Include="Controllers\EmployeeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="Controllers\MasterController.cs" />
     <Compile Include="Controllers\SchoolController.cs" />
+    <Compile Include="Controllers\UserRolesController.cs" />
+    <Compile Include="Filter\CustomAuthorizeAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\City.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+    <Compile Include="Models\AspNetRole.cs">
+      <DependentUpon>SchoolSystem_DB.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Country.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+    <Compile Include="Models\AspNetUser.cs">
+      <DependentUpon>SchoolSystem_DB.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Department.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Digree.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Employee.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Experiecne.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Gender.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+    <Compile Include="Models\AspNetUserRole.cs">
+      <DependentUpon>SchoolSystem_DB.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
-    <Compile Include="Models\Model1.Context.cs">
+    <Compile Include="Models\SchoolSystem_DB.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.Context.tt</DependentUpon>
+      <DependentUpon>SchoolSystem_DB.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Model1.cs">
+    <Compile Include="Models\SchoolSystem_DB.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>SchoolSystem_DB.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Model1.Designer.cs">
+    <Compile Include="Models\SchoolSystem_DB.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.edmx</DependentUpon>
+      <DependentUpon>SchoolSystem_DB.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Models\Province.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+    <Compile Include="Models\TblCity.cs">
+      <DependentUpon>SchoolSystem_DB.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Qualification.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+    <Compile Include="Models\TblCountry.cs">
+      <DependentUpon>SchoolSystem_DB.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\School.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+    <Compile Include="Models\TblProvince.cs">
+      <DependentUpon>SchoolSystem_DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TblSchool.cs">
+      <DependentUpon>SchoolSystem_DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TblSchoolPackage.cs">
+      <DependentUpon>SchoolSystem_DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TblUserType.cs">
+      <DependentUpon>SchoolSystem_DB.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -250,6 +249,7 @@
     <Content Include="Content\images\brands\spotify.png" />
     <Content Include="Content\images\brands\twitter.png" />
     <Content Include="Content\images\brands\youtube.png" />
+    <Content Include="Content\images\default_School.png" />
     <Content Include="Content\images\demo\blog\1.jpg" />
     <Content Include="Content\images\demo\blog\10.jpg" />
     <Content Include="Content\images\demo\blog\11.jpg" />
@@ -719,7 +719,6 @@
     <Content Include="Content\JS\demo_pages\widgets_stats.js" />
     <Content Include="Content\JS\main\bootstrap.bundle.min.js" />
     <Content Include="Content\JS\main\jquery.min.js" />
-    <Content Include="Content\JS\MasterJs\Master.js" />
     <Content Include="Content\JS\plugins\buttons\hover_dropdown.min.js" />
     <Content Include="Content\JS\plugins\buttons\ladda.min.js" />
     <Content Include="Content\JS\plugins\buttons\spin.min.js" />
@@ -879,15 +878,15 @@
     <Content Include="LoginPage\JS\mobile-detect.min.js" />
     <Content Include="LoginPage\JS\perfect-scrollbar.min.js" />
     <Content Include="LoginPage\JS\popper.min.js" />
-    <Content Include="Models\Model1.Context.tt">
+    <Content Include="Models\SchoolSystem_DB.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model1.edmx</DependentUpon>
-      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+      <DependentUpon>SchoolSystem_DB.edmx</DependentUpon>
+      <LastGenOutput>SchoolSystem_DB.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\Model1.tt">
+    <Content Include="Models\SchoolSystem_DB.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model1.edmx</DependentUpon>
-      <LastGenOutput>Model1.cs</LastGenOutput>
+      <DependentUpon>SchoolSystem_DB.edmx</DependentUpon>
+      <LastGenOutput>SchoolSystem_DB.cs</LastGenOutput>
     </Content>
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -940,12 +939,12 @@
     <Content Include="global_assets\demo_data\dashboard\bullets.json" />
     <Content Include="LoginPage\CSS\fonts\fuse-iconfont.ttf" />
     <Content Include="LoginPage\CSS\fonts\fuse-iconfont.woff" />
-    <EntityDeploy Include="Models\Model1.edmx">
+    <EntityDeploy Include="Models\SchoolSystem_DB.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+      <LastGenOutput>SchoolSystem_DB.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\Model1.edmx.diagram">
-      <DependentUpon>Model1.edmx</DependentUpon>
+    <Content Include="Models\SchoolSystem_DB.edmx.diagram">
+      <DependentUpon>SchoolSystem_DB.edmx</DependentUpon>
     </Content>
     <None Include="Project_Readme.html" />
     <Content Include="Views\Shared\SystemSidebar.cshtml" />
@@ -971,7 +970,13 @@
     <Content Include="Views\Home\PageNotFound503.cshtml" />
     <Content Include="Views\Shared\Footer.cshtml" />
     <Content Include="Views\School\AddNewSchool.cshtml" />
-    <Content Include="Views\Master\DepartmentIndex.cshtml" />
+    <Content Include="Views\School\GetProvincesList.cshtml" />
+    <Content Include="Views\School\GetCitiesList.cshtml" />
+    <Content Include="Views\Account\AccessDenied.cshtml" />
+    <Content Include="Views\UserRoles\SystemRoles.cshtml" />
+    <Content Include="Views\UserRoles\AssignUserRoles.cshtml" />
+    <Content Include="Views\Demo\DataTable.cshtml" />
+    <Content Include="Views\UserRoles\UserRoles_Partial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
